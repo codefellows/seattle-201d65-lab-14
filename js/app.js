@@ -7,7 +7,9 @@ var Cart = function(items) {
 };
 
 Cart.prototype.addItem = function(product, quantity) {
-  // TODO: Fill in this instance method to create a new CartItem and add it to this.items
+  // DONE:  Fill in this instance method to create a new CartItem and add it to this.items
+  this.items = new CartItem(product, quantity);
+
 };
 
 Cart.prototype.saveToLocalStorage = function() {
@@ -23,6 +25,8 @@ var CartItem = function(product, quantity) {
   this.product = product;
   this.quantity = quantity;
 };
+
+
 
 // Product contructor.
 var Product = function(filePath, name) {

@@ -26,7 +26,6 @@ function populateForm() {
     optionElement.textContent = Product.allProducts[i].name;
     selectElement.appendChild(optionElement);
   }
-
 }
 
 // When someone submits the form, we need to add the selected item to the cart
@@ -56,8 +55,13 @@ function addSelectedItemToCart() {
   console.log('item name ' + inputItem + ' qty: ' + inputQty + typeof(inputQty));
   // DONE: using those, add one item to the Cart
   new Cart(inputItem, inputQty);
+  cart.addItem(inputItem, inputQty);
   
+  console.log(Cart);
+  console.log(cart);
 }
+
+
 
 // TODO: Update the cart count in the header nav with the number of items in the Cart
 function updateCounter() {}

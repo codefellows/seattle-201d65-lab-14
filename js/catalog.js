@@ -26,7 +26,6 @@ function populateForm() {
     optionElement.textContent = Product.allProducts[i].name;
     selectElement.appendChild(optionElement);
   }
-
 }
 
 // When someone submits the form, we need to add the selected item to the cart
@@ -38,8 +37,8 @@ function handleSubmit(event) {
   event.preventDefault();
 
   // Do all the things ...
-  addSelectedItemToCart();
-  cart.saveToLocalStorage();
+  addSelectedItemToCart();    //DONE
+  cart.saveToLocalStorage();  //DONE
   updateCounter();
   updateCartPreview();
 
@@ -53,14 +52,24 @@ function addSelectedItemToCart() {
   // DONE:  get the quantity
   var inputQty = event.target.quantity.value;
   inputQty = parseInt(inputQty);
-  console.log('item name ' + inputItem + ' qty: ' + inputQty + typeof(inputQty));
+  // console.log('item name ' + inputItem + ' qty: ' + inputQty + typeof(inputQty));
   // DONE: using those, add one item to the Cart
   new Cart(inputItem, inputQty);
+  cart.addItem(inputItem, inputQty);
   
+  // console.log(Cart);
+  console.log(cart);
 }
 
-// TODO: Update the cart count in the header nav with the number of items in the Cart
-function updateCounter() {}
+
+
+// DONE Update the cart count in the header nav with the number of items in the Cart
+function updateCounter() {
+//<span id="itemCount">
+
+var outputCartItemNumber = document.getElementById('itemCount');
+outputCartItemNumber.textContent = cart.items.length;
+}
 
 // TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
 function updateCartPreview() {

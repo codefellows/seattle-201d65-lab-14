@@ -76,7 +76,7 @@ outputCartItemNumber.textContent = cart.items.length;
 
 
 
-// TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
+// DONE: As you add items into the cart, show them (item & quantity) in the cart preview div
 function updateCartPreview() {
   
 // class="card" id="cartContents">
@@ -90,19 +90,19 @@ var outputCartLi = document.createElement('li');
 
 // Cart.items[0].product;
 outputCartLi = document.createElement('li');
-outputCartLi.textContent = cart.items[cart.items.length - 1].product;  // TODO: make dynamic
+outputCartLi.textContent = cart.items[cart.items.length - 1].product;  // DONE: make dynamic
 outputCartUl.appendChild(outputCartLi);
 
 outputCartLi = document.createElement('li');
-outputCartLi.textContent = cart.items[cart.items.length - 1].quantity;  // TODO: make dynamic
+outputCartLi.textContent = cart.items[cart.items.length - 1].quantity;  // DONE: make dynamic
 outputCartUl.appendChild(outputCartLi);
 // outputCartLi.textContent = cart.items[cart.items.length - 1];
 // outputCartUl.appendChild(outputCartLi);
 
 outputCartPreviewDiv.appendChild(outputCartUl);
 
-  // TODO: Get the item and quantity from the form
-  // TODO: Add a new element to the cartContents div with that information
+  // DONE: Get the item and quantity from the form
+  // DONE: Add a new element to the cartContents div with that information
 }
 
 

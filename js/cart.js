@@ -7,7 +7,7 @@ table.addEventListener('click', removeItemFromCart);
 var cart;
 
 function loadCart() {
-  var cartItems = JSON.parse(localStorage.getItem('cart')) || [];
+  var cartItems = JSON.parse(localStorage.getItem('savedCartLS')) || [];
   cart = new Cart(cartItems);
 }
 
@@ -18,16 +18,34 @@ function renderCart() {
   showCart();
 }
 
-// TODO: Remove all of the rows (tr) in the cart table (tbody)
-function clearCart() {}
+// DONE: Remove all of the rows (tr) in the cart table (tbody)
+function clearCart() {
+  var rowsToClear = document.getElementsByTagName('tbody');
+  rowsToClear.innerHTML='';
+}
 
-// TODO: Fill in the <tr>'s under the <tbody> for each item in the cart
+// TODO:kindof Fill in the <tr>'s under the <tbody> for each item in the cart
 function showCart() {
 
-  // TODO: Find the table body
+  var outputCartTbody = document.getElementsByTagName('tbody');
+  var outputCartTR = document.createElement('tr');
+  var outputCartTD = document.createElement('td');  
+  
+  outputCartTD = document.createElement('td');
+  outputCartTD.textContent = cart.items[0].product;
+  outputCartTR.appendChild(outputCartTD);
+  
+  outputCartTD = document.createElement('td');
+  outputCartTD.textContent = cart.items[0].quantity;
+  outputCartTR.appendChild(outputCartTD);
+  
+  outputCartTbody.appendChild(outputCartTR);
 
-  // TODO: Iterate over the items in the cart
-  // TODO: Create a TR
+
+  // TODO:kindof Find the table body
+
+  // TODO:kindof Iterate over the items in the cart
+  // TODO:kindof Create a TR
   // TODO: Create a TD for the delete link, quantity,  and the item
   // TODO: Add the TR to the TBODY and each of the TD's to the TR
 

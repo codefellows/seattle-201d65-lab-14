@@ -1,1 +1,20 @@
 /* TODO: Make it awesome */
+body{
+  display: block;
+  outline: 2px dashed orange;
+}
+header {
+  outline: 2px dotted red;
+  padding: 20px;
+}
+
+
+main{
+  outline: 2px double greenyellow;
+  padding: 20px
+}
+
+section{
+  outline: 2px dashed green;
+  padding: 20px;
+}

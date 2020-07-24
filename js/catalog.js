@@ -39,7 +39,7 @@ function handleSubmit(event) {
   // Do all the things ...
   addSelectedItemToCart();    //DONE
   cart.saveToLocalStorage();  //DONE
-  updateCounter();
+  updateCounter();  // DONE
   updateCartPreview();
 
 }
@@ -71,12 +71,44 @@ var outputCartItemNumber = document.getElementById('itemCount');
 outputCartItemNumber.textContent = cart.items.length;
 }
 
+
+
+
+
+
 // TODO: As you add items into the cart, show them (item & quantity) in the cart preview div
 function updateCartPreview() {
   
+// class="card" id="cartContents">
+var outputCartPreviewDiv = document.getElementById('cartContents');
+var outputCartUl = document.createElement('ul');
+var outputCartLi = document.createElement('li');  
+
+// we need the individual item on each line of the preview
+// outputCartLi.textContent = 'potato';
+// outputCartUl.appendChild(outputCartLi);
+
+// Cart.items[0].product;
+outputCartLi = document.createElement('li');
+outputCartLi.textContent = cart.items[cart.items.length - 1].product;  // TODO: make dynamic
+outputCartUl.appendChild(outputCartLi);
+
+outputCartLi = document.createElement('li');
+outputCartLi.textContent = cart.items[cart.items.length - 1].quantity;  // TODO: make dynamic
+outputCartUl.appendChild(outputCartLi);
+// outputCartLi.textContent = cart.items[cart.items.length - 1];
+// outputCartUl.appendChild(outputCartLi);
+
+outputCartPreviewDiv.appendChild(outputCartUl);
+
   // TODO: Get the item and quantity from the form
   // TODO: Add a new element to the cartContents div with that information
 }
+
+
+
+
+
 
 // Set up the "submit" event listener on the form.
 // This is the trigger for the app. When a user "submits" the form, it will
